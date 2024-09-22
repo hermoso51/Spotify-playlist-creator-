@@ -1,12 +1,15 @@
 import requests
 from bs4 import BeautifulSoup
-from pprint import pprint
+import os
+from dotenv import load_dotenv
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
-CLIENT_ID = "d3efa15c066d4e8db34b30b95dbc5674"
-CLIENT_SECRET = "23a1bce59b0843488311d659bf4ad392"
-redirect_url = "http://example.com"
+load_dotenv()
+
+CLIENT_ID = os.getenv('SPOTIPY_CLIENT_ID')
+CLIENT_SECRET = os.getenv('SPOTIPY_CLIENT_SECRET')
+redirect_url = os.getenv('SPOTIPY_REDIRECT_URI')
 timemachine = input("Wich year do you want to travel to? Type the date in this format YYYY-MM-DD: ")
 top100class = "c-title  a-no-trucate a-font-primary-bold-s u-letter-spacing-0021 u-font-size-23@tablet lrv-u-font-size-16 u-line-height-125 u-line-height-normal@mobile-max a-truncate-ellipsis u-max-width-245 u-max-width-230@tablet-only u-letter-spacing-0028@tablet"
 
